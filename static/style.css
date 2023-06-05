@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  
+  background-color:rgba(3, 103, 161, 0.945);
+
+  height: 100vh;
+
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 60vh;
+  color: #07ec2e;
+}
+
+.wrapper {
+  width: 70%;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 8rem 0 15rem 0;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-humidity {
+  display: flex;
+  gap: 1rem;
+}
+
+.monitoring {
+  display: flex;
+  gap: 2rem;
+}
+
+.control {
+  display: flex;
+  gap: 5rem;
+}
+
+button {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: none;
+}
+
+.button-open {
+  background-color: #243abb;
+
+}
+
+.button-close {
+  background-color: #fc9c9c;
+
+}
+
+h3 {
+  margin-top: 10rem;
+  text-align: center
+}
+
+@media (max-width: 620px) {
+  .container {
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 5rem;
+  }
+
+  h1 {
+
+    margin-block: 10rem 8rem;
+  }
+
+  h2 {
+    width: fit-content;
+  }
+
+  h3 {
+    margin-top: 5rem
+  }
+
+  .message-humidity{
+    align-items: center;
+  }
+}
