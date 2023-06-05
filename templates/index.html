@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">''
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='src/irrigacao.png')}}" type="image/x-icon">
     <title>Sistema de irrigação</title>
   </head>
   <body>
@@ -23,18 +24,21 @@
 
           <div class="control">
             <form action="/open" method="POST">
+
               <button class="button-open">Abrir irrigação</button>
             </form>
 
             <form action="/close" method="POST">
+              
               <button class="button-close">Fechar Irrigação</button>
             </form>
           </div>
         </div>
 
-        <h3>Ultima atualização feita a 0 Minutos</h3>
+        <h3>Ultima aferição feita há menos de 1 minuto </h3>
       </div>
     </main>
+
     <script src="{{ url_for('static', filename='index.js')}}" ></script>
   </body>
 </html>

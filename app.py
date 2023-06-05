@@ -1,34 +1,36 @@
 from flask import Flask, render_template
-import time
 
-umidade = open('umidade.txt', 'r')
-for linha in umidade:
-    print(linha)
+## Função que busca a umidade no arquivo .txt (simulação de dados que seria fornecido pelo Arduino)
+def getNewMoisture():
+    moisture = open('umidade.txt', 'r')
+    for line in moisture:
+        newMoisture = line
+        
+    return newMoisture
 
+## Inicio do aplicativo 
 app = Flask(__name__)
 
+##  Inserção de dados lida
 @app.route('/')
 def index():
-    umidade = open('umidade.txt', 'r')
-    for linha in umidade:
-        print(linha)
-    nome = linha
-    return render_template('index.html', name=nome)
+    return render_template('index.html', name = getNewMoisture())
 
+## Simulação da ativação da bomba (Criação do arquivo txt)
 @app.route("/open", methods=["POST"])
 def closeButton():
     with open("at.txt", "w") as arquivo:
         arquivo.write("ativado")
-    nome = linha
-    return render_template('index.html', name=nome)
+    
+    return render_template('index.html', name = getNewMoisture())
 
+## Simulação da desativação da bomba (Criação do arquivo txt)
 @app.route("/close", methods=["POST"])
 def openButton():
     with open("at.txt", "w") as arquivo:
         arquivo.write("desativado")
-    nome = linha
-    return render_template('index.html', name=nome)
+   
+    return render_template('index.html', name = getNewMoisture())
 
-if __name__ == '__main__':
-    app.run(debug=True)
+app.run(debug=True)
     

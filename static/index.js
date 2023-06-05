@@ -1,20 +1,22 @@
 class Layout {
     constructor() {
         this.lastUpadateTime();
-        this.upadateHumidity();
+        this.upadateMoisture();
+        this.openIrrigation();
+        this.closeIrrigation();
     };
 
-    upadateHumidity() {
-        const timer = setInterval(this.upadateHumidityNow ,6000);
-    }
-
-    upadateHumidityNow() {
-        window.location.reload(true);
-    }
-
+    upadateMoisture() {
+        const timer = setInterval(this.upadateMoistureNow ,600000);
+    };
+    
     lastUpadateTime() {
         this.time = 0;
-        const timer = setInterval(this.updateMessage ,1000);
+        const timer = setInterval(this.updateMessage ,60000);
+    };
+
+    upadateMoistureNow() {
+        window.location.reload(true);
     };
 
     updateMessage = () => {
@@ -22,9 +24,23 @@ class Layout {
 
         const message = document.querySelector('h3');
         message.innerHTML = `
-            Ultima aferição feita há ${this.time} segundos
+            Ultima aferição feita há ${this.time} minutos
         `;
     };
-  };
 
+    openIrrigation() {
+        const buttonOpen = document.querySelector('.button-open');
+        buttonOpen.addEventListener('click', () => {
+            alert('Irrigação aberta !');
+        });
+    };
+
+    closeIrrigation() {
+        const buttonOpen = document.querySelector('.button-close');
+        buttonOpen.addEventListener('click', () => {
+            alert('Irrigação fechada !');
+        });
+    };
+  };
+  
   new Layout();

@@ -11,10 +11,10 @@
 body {
   font-size: 1.6rem;
   
-  background-color:rgba(3, 103, 161, 0.945);
+  background-image:url('./src/background-blue.jpg');
+  background-size: cover;
 
   height: 100vh;
-
 }
 
 main {
