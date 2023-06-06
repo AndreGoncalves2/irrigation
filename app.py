@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-import time
 
 ## Função que busca a umidade no arquivo .txt (simulação de dados que seria fornecido pelo Arduino)
 def getNewMoisture():
