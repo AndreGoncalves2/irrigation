@@ -7,12 +7,12 @@ class Layout {
     };
 
     upadateMoisture() {
-        const timer = setInterval(this.upadateMoistureNow ,600000);
+        const timer = setInterval(this.upadateMoistureNow ,60000);
     };
     
     lastUpadateTime() {
         this.time = 0;
-        const timer = setInterval(this.updateMessage ,60000);
+        const timer = setInterval(this.updateMessage ,1000);
     };
 
     upadateMoistureNow() {
@@ -24,7 +24,7 @@ class Layout {
 
         const message = document.querySelector('h3');
         message.innerHTML = `
-            Ultima aferição feita há ${this.time} minutos
+            Ultima aferição feita há ${this.time} segundos
         `;
     };
 
