@@ -10,6 +10,7 @@
 
 body {
   font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
   
   background-image:url('./src/background-blue.jpg');
   background-size: cover;
@@ -54,7 +55,6 @@ h1 {
 
 .monitoring button {
   width: fit-content;
-  margin-inline: auto;
   padding: 1.5rem;
   background-color: #3be257;
   color-scheme: #000000;
@@ -73,7 +73,6 @@ button {
 
 .button-open {
   background-color: #243abb;
-
 }
 
 .button-close {

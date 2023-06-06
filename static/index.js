@@ -4,6 +4,15 @@ class Layout {
         this.upadateMoisture();
         this.openIrrigation();
         this.closeIrrigation();
+        this.updateButton();
+    };
+
+    updateButton() {
+        const button = document.querySelector('.monitoring button');
+
+        button.addEventListener('click', () => {
+            this.upadateMoistureNow();
+        });
     };
 
     upadateMoisture() {

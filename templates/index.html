@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='src/irrigacao.png')}}" type="image/x-icon">
     <title>Sistema de irrigação</title>
@@ -20,10 +26,8 @@
               <h2>A umidade aferida é de : </h2>
               <h2 class="humidity">{{ name }}</h2>
             </div>
-            <form  method="POST">
-              
-              <button>Atualizar</button>
-            </form>
+             
+            <button>Atualizar</button>
           </div>
 
           <div class="control">

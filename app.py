@@ -32,5 +32,5 @@ def openButton():
    
     return render_template('index.html', name = getNewMoisture())
 
-app.run(debug=True)
+app.run()
     
