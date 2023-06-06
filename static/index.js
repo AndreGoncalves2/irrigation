@@ -7,12 +7,12 @@ class Layout {
     };
 
     upadateMoisture() {
-        const timer = setInterval(this.upadateMoistureNow, 59000);
+        setInterval(this.upadateMoistureNow, 59000);
     };
     
     lastUpadateTime() {
         this.time = 0;
-        const timer = setInterval(this.updateMessage, 1000);
+        setInterval(this.updateMessage, 1000);
     };
 
     upadateMoistureNow() {
@@ -30,16 +30,33 @@ class Layout {
 
     openIrrigation() {
         const buttonOpen = document.querySelector('.button-open');
-        buttonOpen.addEventListener('click', () => {
+        buttonOpen.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            fetch("http://127.0.0.1:5000/open", {
+                method: "POST"});
+    
             alert('Irrigação aberta !');
+            this.countdown = setTimeout(this.buttonClose, 10000);
         });
     };
 
     closeIrrigation() {
         const buttonOpen = document.querySelector('.button-close');
-        buttonOpen.addEventListener('click', () => {
-            alert('Irrigação fechada !');
+        buttonOpen.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            this.buttonClose();
+            clearTimeout(this.countdown);
         });
+    };
+
+    buttonClose() {
+        fetch("http://127.0.0.1:5000/close", {
+                method: "POST"
+            });
+
+        alert('Irrigação fechada !');
     };
   };
   

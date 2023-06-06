@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import time
 
 ## Função que busca a umidade no arquivo .txt (simulação de dados que seria fornecido pelo Arduino)
 def getNewMoisture():
@@ -21,7 +22,7 @@ def index():
 def closeButton():
     with open("at.txt", "w") as arquivo:
         arquivo.write("ativado")
-    
+        
     return render_template('index.html', name = getNewMoisture())
 
 ## Simulação da desativação da bomba (Criação do arquivo txt)

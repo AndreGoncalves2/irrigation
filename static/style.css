@@ -49,6 +49,15 @@ h1 {
 .monitoring {
   display: flex;
   gap: 2rem;
+  flex-direction: column;
+}
+
+.monitoring button {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 1.5rem;
+  background-color: #3be257;
+  color-scheme: #000000;
 }
 
 .control {
