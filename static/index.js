@@ -7,12 +7,12 @@ class Layout {
     };
 
     upadateMoisture() {
-        const timer = setInterval(this.upadateMoistureNow ,60000);
+        const timer = setInterval(this.upadateMoistureNow, 60000);
     };
     
     lastUpadateTime() {
         this.time = 0;
-        const timer = setInterval(this.updateMessage ,1000);
+        const timer = setInterval(this.updateMessage, 1000);
     };
 
     upadateMoistureNow() {
