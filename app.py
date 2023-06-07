@@ -14,7 +14,7 @@ app = Flask(__name__)
 ##  Inserção de dados lida
 @app.route('/')
 def index():
-    return render_template('index.html', name = getNewMoisture())
+    return render_template('index.html', moisture = getNewMoisture())
 
 ## Simulação da ativação da bomba (Criação do arquivo txt)
 @app.route("/open", methods=["POST"])
@@ -22,7 +22,7 @@ def closeButton():
     with open("at.txt", "w") as arquivo:
         arquivo.write("ativado")
         
-    return render_template('index.html', name = getNewMoisture())
+    return render_template('index.html', moisture = getNewMoisture())
 
 ## Simulação da desativação da bomba (Criação do arquivo txt)
 @app.route("/close", methods=["POST"])
@@ -30,7 +30,7 @@ def openButton():
     with open("at.txt", "w") as arquivo:
         arquivo.write("desativado")
    
-    return render_template('index.html', name = getNewMoisture())
+    return render_template('index.html', moisture = getNewMoisture())
 
 app.run()
     
